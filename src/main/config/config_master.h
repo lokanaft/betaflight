@@ -63,6 +63,14 @@ typedef struct master_t {
     uint16_t gyro_soft_notch_cutoff_1;      // Biquad gyro notch low cutoff
     uint16_t gyro_soft_notch_hz_2;          // Biquad gyro notch hz
     uint16_t gyro_soft_notch_cutoff_2;      // Biquad gyro notch low cutoff
+    uint16_t gyro_soft_notch_hz_3;          // Biquad gyro notch hz
+    uint16_t gyro_soft_notch_cutoff_3;      // Biquad gyro notch low cutoff
+    uint16_t gyro_soft_notch_hz_4;          // Biquad gyro notch hz
+    uint16_t gyro_soft_notch_cutoff_4;      // Biquad gyro notch low cutoff
+    uint16_t gyro_soft_notch_hz_5;          // Biquad gyro notch hz
+    uint16_t gyro_soft_notch_cutoff_5;      // Biquad gyro notch low cutoff
+    uint16_t gyro_soft_notch_hz_6;          // Biquad gyro notch hz
+    uint16_t gyro_soft_notch_cutoff_6;      // Biquad gyro notch low cutoff
     uint16_t dcm_kp;                        // DCM filter proportional gain ( x 10000)
     uint16_t dcm_ki;                        // DCM filter integral gain ( x 10000)
 

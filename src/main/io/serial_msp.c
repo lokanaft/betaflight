@@ -1258,7 +1258,7 @@ static bool processOutCommand(uint8_t cmdMSP)
         serialize16(masterConfig.motor_pwm_rate);
         break;
     case MSP_FILTER_CONFIG :
-        headSerialReply(17);
+        headSerialReply(33);
         serialize8(masterConfig.gyro_soft_lpf_hz);
         serialize16(currentProfile->pidProfile.dterm_lpf_hz);
         serialize16(currentProfile->pidProfile.yaw_lpf_hz);
@@ -1268,6 +1268,14 @@ static bool processOutCommand(uint8_t cmdMSP)
         serialize16(currentProfile->pidProfile.dterm_notch_cutoff);
         serialize16(masterConfig.gyro_soft_notch_hz_2);
         serialize16(masterConfig.gyro_soft_notch_cutoff_2);
+        serialize16(masterConfig.gyro_soft_notch_hz_3);
+        serialize16(masterConfig.gyro_soft_notch_cutoff_3);
+        serialize16(masterConfig.gyro_soft_notch_hz_4);
+        serialize16(masterConfig.gyro_soft_notch_cutoff_4);
+        serialize16(masterConfig.gyro_soft_notch_hz_5);
+        serialize16(masterConfig.gyro_soft_notch_cutoff_5);
+        serialize16(masterConfig.gyro_soft_notch_hz_6);
+        serialize16(masterConfig.gyro_soft_notch_cutoff_6);
         break;
     case MSP_PID_ADVANCED:
         headSerialReply(17);
@@ -1875,6 +1883,22 @@ static bool processInCommand(void)
         if (currentPort->dataSize > 13) {
             masterConfig.gyro_soft_notch_hz_2 = read16();
             masterConfig.gyro_soft_notch_cutoff_2 = read16();
+        }
+        if (currentPort->dataSize > 17) {
+            masterConfig.gyro_soft_notch_hz_3 = read16();
+            masterConfig.gyro_soft_notch_cutoff_3 = read16();
+        }
+        if (currentPort->dataSize > 21) {
+            masterConfig.gyro_soft_notch_hz_4 = read16();
+            masterConfig.gyro_soft_notch_cutoff_4 = read16();
+        }
+        if (currentPort->dataSize > 25) {
+            masterConfig.gyro_soft_notch_hz_5 = read16();
+            masterConfig.gyro_soft_notch_cutoff_5 = read16();
+        }
+        if (currentPort->dataSize > 29) {
+            masterConfig.gyro_soft_notch_hz_6 = read16();
+            masterConfig.gyro_soft_notch_cutoff_6 = read16();
         }
         break;
     case MSP_SET_PID_ADVANCED:

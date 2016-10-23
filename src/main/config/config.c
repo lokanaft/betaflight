@@ -494,6 +494,14 @@ void createDefaultConfig(master_t *config)
     config->gyro_soft_notch_cutoff_1 = 300;
     config->gyro_soft_notch_hz_2 = 200;
     config->gyro_soft_notch_cutoff_2 = 100;
+    config->gyro_soft_notch_hz_3 = 0;
+    config->gyro_soft_notch_cutoff_3 = 100;
+    config->gyro_soft_notch_hz_4 = 0;
+    config->gyro_soft_notch_cutoff_4 = 100;
+    config->gyro_soft_notch_hz_5 = 0;
+    config->gyro_soft_notch_cutoff_5 = 100;
+    config->gyro_soft_notch_hz_6 = 0;
+    config->gyro_soft_notch_cutoff_6 = 100;
 
     config->debug_mode = DEBUG_NONE;
 
@@ -773,12 +781,32 @@ void activateConfig(void)
     if (masterConfig.gyro_soft_notch_cutoff_2 >= masterConfig.gyro_soft_notch_hz_2)
         masterConfig.gyro_soft_notch_hz_2 = 0;
 
+    if (masterConfig.gyro_soft_notch_cutoff_3 >= masterConfig.gyro_soft_notch_hz_3)
+        masterConfig.gyro_soft_notch_hz_3 = 0;
+
+    if (masterConfig.gyro_soft_notch_cutoff_4 >= masterConfig.gyro_soft_notch_hz_4)
+        masterConfig.gyro_soft_notch_hz_4 = 0;
+
+    if (masterConfig.gyro_soft_notch_cutoff_5 >= masterConfig.gyro_soft_notch_hz_5)
+        masterConfig.gyro_soft_notch_hz_5 = 0;
+
+    if (masterConfig.gyro_soft_notch_cutoff_6 >= masterConfig.gyro_soft_notch_hz_6)
+        masterConfig.gyro_soft_notch_hz_6 = 0;
+
     gyroUseConfig(&masterConfig.gyroConfig,
         masterConfig.gyro_soft_lpf_hz,
         masterConfig.gyro_soft_notch_hz_1,
         masterConfig.gyro_soft_notch_cutoff_1,
         masterConfig.gyro_soft_notch_hz_2,
         masterConfig.gyro_soft_notch_cutoff_2,
+        masterConfig.gyro_soft_notch_hz_3,
+        masterConfig.gyro_soft_notch_cutoff_3,
+        masterConfig.gyro_soft_notch_hz_4,
+        masterConfig.gyro_soft_notch_cutoff_4,
+        masterConfig.gyro_soft_notch_hz_5,
+        masterConfig.gyro_soft_notch_cutoff_5,
+        masterConfig.gyro_soft_notch_hz_6,
+        masterConfig.gyro_soft_notch_cutoff_6,
         masterConfig.gyro_soft_type);
 
 #ifdef TELEMETRY

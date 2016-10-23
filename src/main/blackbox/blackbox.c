@@ -1291,10 +1291,18 @@ static bool blackboxWriteSysinfo()
         BLACKBOX_PRINT_HEADER_LINE("gyro_lpf:%d",                         masterConfig.gyro_lpf);
         BLACKBOX_PRINT_HEADER_LINE("gyro_soft_type:%d",                   masterConfig.gyro_soft_type);
         BLACKBOX_PRINT_HEADER_LINE("gyro_lowpass_hz:%d",                  masterConfig.gyro_soft_lpf_hz);
-        BLACKBOX_PRINT_HEADER_LINE("gyro_notch_hz:%d,%d",                 masterConfig.gyro_soft_notch_hz_1,
-                                                                          masterConfig.gyro_soft_notch_hz_2);
-        BLACKBOX_PRINT_HEADER_LINE("gyro_notch_cutoff:%d,%d",             masterConfig.gyro_soft_notch_cutoff_1,
-                                                                          masterConfig.gyro_soft_notch_cutoff_2);
+        BLACKBOX_PRINT_HEADER_LINE("gyro_notch_hz:%d,%d,%d,%d,%d,%d",     masterConfig.gyro_soft_notch_hz_1,
+                                                                          masterConfig.gyro_soft_notch_hz_2,
+                                                                          masterConfig.gyro_soft_notch_hz_3,
+                                                                          masterConfig.gyro_soft_notch_hz_4,
+                                                                          masterConfig.gyro_soft_notch_hz_5,
+                                                                          masterConfig.gyro_soft_notch_hz_6);
+        BLACKBOX_PRINT_HEADER_LINE("gyro_notch_cutoff:%d,%d,%d,%d,%d,%d", masterConfig.gyro_soft_notch_cutoff_1,
+                                                                          masterConfig.gyro_soft_notch_cutoff_2,
+                                                                          masterConfig.gyro_soft_notch_cutoff_3,
+                                                                          masterConfig.gyro_soft_notch_cutoff_4,
+                                                                          masterConfig.gyro_soft_notch_cutoff_5,
+                                                                          masterConfig.gyro_soft_notch_cutoff_6);
         BLACKBOX_PRINT_HEADER_LINE("acc_lpf_hz:%d",                 (int)(masterConfig.acc_lpf_hz * 100.0f));
         BLACKBOX_PRINT_HEADER_LINE("acc_hardware:%d",                     masterConfig.acc_hardware);
         BLACKBOX_PRINT_HEADER_LINE("baro_hardware:%d",                    masterConfig.baro_hardware);

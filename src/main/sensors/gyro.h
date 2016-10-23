@@ -46,6 +46,14 @@ void gyroUseConfig(const gyroConfig_t *gyroConfigToUse,
                    uint16_t gyro_soft_notch_cutoff_1,
                    uint16_t gyro_soft_notch_hz_2,
                    uint16_t gyro_soft_notch_cutoff_2,
+                   uint16_t gyro_soft_notch_hz_3,
+                   uint16_t gyro_soft_notch_cutoff_3,
+                   uint16_t gyro_soft_notch_hz_4,
+                   uint16_t gyro_soft_notch_cutoff_4,
+                   uint16_t gyro_soft_notch_hz_5,
+                   uint16_t gyro_soft_notch_cutoff_5,
+                   uint16_t gyro_soft_notch_hz_6,
+                   uint16_t gyro_soft_notch_cutoff_6,
                    uint8_t gyro_soft_lpf_type);
 void gyroSetCalibrationCycles(void);
 void gyroInit(void);
